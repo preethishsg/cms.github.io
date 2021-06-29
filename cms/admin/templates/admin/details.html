@@ -1,0 +1,20 @@
+{% extends 'adbase.html' %}
+{% block body %}
+            <div class="container">
+     {% for contact in contacts %}
+    
+                    full name     : {{contact.1}} {{contact.2}} <br>
+                    email         : {{contact.3}}<br>
+                    phone number  : {{contact.4}}<br>
+                    adderss       : {{contact.5}} {{contact.6}}
+                    <!-- <td>{{contact.1}}</td>
+                    <td>{{contact.2}}</td>
+                    <td>{{contact.3}}</td> -->
+  <br>
+                        <a href="admin/accept/{{contact.0}}" class="btn btn-success">Accept</a>
+                        <a href="admin/decline/{{contact.0}}" class="btn btn-danger btn-delete">Decline</a>
+                  
+            
+                {% endfor %}
+                </div>
+{% endblock body  %}

@@ -1,0 +1,180 @@
+{% extends 'base.html' %} {% block title %} Home{% endblock title %} {% block body %}
+<br id="home"><br> {% if session['name'] %} {% else %}
+
+<!-- hero page -->
+<div class="row bg-dark">
+    <div class="col-8">
+        <div class="container text-white">
+            <h1>
+                <br>
+                <br>
+                <br> Welcome to Courier Management System
+
+            </h1>
+            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, reiciendis magnam! Ducimus atque delectus nulla temporibus molestias? Perferendis eligendi quasi fuga blanditiis, adipisci facilis temporibus quis, quia deserunt ad iure.</p>
+        </div>
+    </div>
+    <div class="col-4">
+        <div>
+            <br> {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ message }}
+            </div>
+            {% endfor %} {% endif %} {% endwith %}
+        </div>
+        <div class="row">
+            <div class="col-md-9 ">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title d-flex justify-content-center">Customer login</h5>
+                        <form action="login" method="POST">
+                            <div class=" form-group ">
+                                <label>Email:</label>
+                                <input type="email" class="form-control " name="email">
+                            </div>
+                            <br>
+                            <div class="form-group ">
+                                <label>Password:</label>
+                                <input type="password" class="form-control " name="password">
+                                <a style="float: right;" href="/">forgot password</a>
+
+                            </div>
+                            <br>
+                            <div class="form-group ">
+                                <button class="btn btn-primary ">Login</button>
+                            </div>
+                        </form>
+                        <br> i don't have a account. <a href="register">create account</a>
+                    </div>
+                </div>
+                <br><br>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+<!-- end hero page -->
+
+<!-- search bar -->
+<div class="container-fluid bg-light" style="height: 100vh; width:100vw;">
+    <div class="col">
+        <br>
+        <br>
+        <div class="row">
+            <center>
+                <h1 style="color:rgb(93, 154, 235)">{% if session['name'] %} Welcome to Courier Tracking System, {{ session['name'] }} {% else %} {% endif %}
+                </h1>
+            </center>
+
+        </div>
+        <form class="d-flex justify-content-center">
+            <input class="form-control me-2 d-flex justify-content-center" style="width:50%;" type="search" placeholder="Enter your Tracking id" aria-label="Search">
+            <button class="btn btn-outline-primary me-2" type="search">search</button>
+        </form>
+    </div>
+</div>
+<!-- end search bar -->
+
+<!-- ======= About Us Section ======= -->
+<div class="col bg-secondary " style="height: 100vh; width:100vw">
+    <div class="row">
+        <div class="container">
+            <br id="about"><br>
+            <section id="about" class="about">
+                <div class="container">
+                    <div class="section-title" data-aos="fade-up">
+                        <h2>About Us</h2>
+                    </div>
+
+                    <div class="row content">
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                            <ul>
+                                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+                                <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
+                                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="300">
+                            <p>
+                                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+                                id est laborum.
+                            </p>
+                            <a href="#" class="btn-learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<!-- End About Us Section -->
+
+<!-- feedback -->
+<div class="container-fluid bg-warning">
+    <div class="row " style="height: 100vh; ">
+        <div class="col ">
+            <br id="feedback"><br>
+            <div class="container">
+                <h2>Feedback</h2>
+                <form action="" method="">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Courier id</label>
+                        <input type="text" class="form-control" name="title" id="title" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" name="title" id="title" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="desc" class="form-label">Message</label>
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-dark">send feedback</button>
+                </form>
+            </div>
+
+        </div>
+        <div class="col">
+            <br><br>
+            <h3>contact</h3>
+            <p>Lorem ipsum dolor,m suscipit exercitationem natus quod ut, alias nihil. Nam earum odio dolore magni reprehenderit numquam, est expedita?</p>
+            <h6>+91 080 6268289</h6>
+
+            <h6>kumbashi,kundapura</h6>
+            <h6>udupi-562721</h6>
+            <h6>karnataka, India</h6>
+        </div>
+    </div>
+</div>
+
+<!-- end feedback -->
+
+<!-- complaint -->
+{% if session['name'] %}
+<div class="col bg-light" style="height: 100vh; width:100vw">
+    <br id="compliant"><br>
+    <div class="container my-3" style="width:50%; margin-left:25%; ">
+        <h2>Rise Compliant</h2>
+        <form action="/" method="">
+            <div class="mb-3">
+                <label for="title" class="form-label">Courier id</label>
+                <input type="text" class="form-control" name="title" id="title" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="title" class="form-label">Email Address</label>
+                <input type="email" class="form-control" name="title" id="title" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="desc" class="form-label">compliant</label>
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark">send compliant</button>
+        </form>
+    </div>
+</div>
+<!-- end complaint -->
+{% endif %} {% endblock body %}
